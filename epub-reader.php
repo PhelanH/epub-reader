@@ -19,7 +19,7 @@
  * Description:       EPub Reader zum einbinden in Wordpress Seiten. Shortcode: [epub-reader src="/epubs/yourbook"].
  * Version:           1.0.0
  * Author:            PhelanH
- * Author URI:        https://github.com/PhelanH/epub-reader/
+ * Author URI:        https://github.com/PhelanH/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       epub-reader
