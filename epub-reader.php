@@ -8,18 +8,18 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://kodespace.com
+ * @link              https://github.com/PhelanH/epub-reader/
  * @since             0.9.0
  * @package           Epub_Reader
  *
  * @wordpress-plugin
  * Plugin Name:       ePub Reader
- * Plugin URI:        https://github.com/cmroanirgo/epub-reader
- * GitHub Plugin URI: cmroanirgo/epub-reader
+ * Plugin URI:        https://github.com/PhelanH/epub-reader/
+ * GitHub Plugin URI: PhelanH/epub-reader
  * Description:       An epub reader, mobile ready. Shortcode: [epub-reader src="/epubs/yourbook"].
- * Version:           0.9.24
- * Author:            Craig
- * Author URI:        https://kodespace.com/epub-reader
+ * Version:           1.0.0
+ * Author:            PhelanH
+ * Author URI:        https://github.com/PhelanH/epub-reader/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       epub-reader
@@ -32,7 +32,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PLUGIN_NAME_VERSION', '0.9.24' );
+define( 'PLUGIN_NAME_VERSION', '1.0.0' );
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-epub-reader-activator.php

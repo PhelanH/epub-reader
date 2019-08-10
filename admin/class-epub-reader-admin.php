@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader
@@ -18,7 +18,7 @@
  *
  * @package    Epub_Reader
  * @subpackage Epub_Reader/admin
- * @author     cmroanirgo <cmroanirgo@users.noreply.github.com>
+ * @author     phelanh <phelanh@users.noreply.github.com>
  */
 class Epub_Reader_Admin {
 
@@ -147,113 +147,6 @@ class Epub_Reader_Admin {
 	 * @since    0.9.0
 	 */
 	public function register_settings() {
-
-		/*
-		// Here we are going to register our setting.
-		register_setting(
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings',
-			array( $this, 'sandbox_register_setting' )
-		);
-
-		// Here we are going to add a section for our setting.
-		add_settings_section(
-			$this->plugin_name . '-settings-section',
-			__( 'Settings', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_section' ),
-			$this->plugin_name . '-settings'
-		);
-
-		// Here we are going to add fields to our section.
-		add_settings_field(
-			'post-types',
-			__( 'Post Types', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_multiple_checkbox' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'post-types',
-				'description' => __( 'Save button will be added only to the checked post types.', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'toggle-content-override',
-			__( 'Append Button', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_single_checkbox' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'toggle-content-override',
-				'description' => __( 'If checked, it will append save button to the content.', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'toggle-status-override',
-			__( 'Membership', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_single_checkbox' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'toggle-status-override',
-				'description' => __( 'If checked, this feature will be available only to logged in users. ', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'toggle-css-override',
-			__( 'Our Styles', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_single_checkbox' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'toggle-css-override',
-				'description' => __( 'If checked, our style will be used.', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'text-save',
-			__( 'Save Item', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_input_text' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'text-save',
-				'default'   => __( 'Save Item', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'text-unsave',
-			__( 'Unsave Item', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_input_text' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'text-unsave',
-				'default'   => __( 'Unsave Item', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'text-saved',
-			__( 'Saved. See saved items.', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_input_text' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'text-saved',
-				'default'   => __( 'Saved. See saved items.', 'epub-reader' )
-			)
-		);
-		add_settings_field(
-			'text-no-saved',
-			__( 'You don\'t have any saved items.', 'epub-reader' ),
-			array( $this, 'sandbox_add_settings_field_input_text' ),
-			$this->plugin_name . '-settings',
-			$this->plugin_name . '-settings-section',
-			array(
-				'label_for' => 'text-no-saved',
-				'default'   => __( 'You don\'t have any saved items.', 'epub-reader' )
-			)
-		);
-		*/
 	}
 
 	/**

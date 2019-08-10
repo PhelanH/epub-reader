@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader
@@ -19,7 +19,7 @@
  *
  * @package    Epub_Reader
  * @subpackage Epub_Reader/includes
- * @author     cmroanirgo <cmroanirgo@users.noreply.github.com>
+ * @author     phelanh <phelanh@users.noreply.github.com>
  */
 class Epub_Reader_Loader {
 

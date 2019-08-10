@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader

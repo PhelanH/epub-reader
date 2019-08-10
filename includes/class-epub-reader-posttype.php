@@ -2,7 +2,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader
@@ -21,7 +21,7 @@
  * @since      0.9.0
  * @package    Epub_Reader
  * @subpackage Epub_Reader/includes
- * @author     cmroanirgo <cmroanirgo@users.noreply.github.com>
+ * @author     phelanh <phelanh@users.noreply.github.com>
  */
 class Epub_Reader_PostType {
 	
@@ -30,6 +30,34 @@ class Epub_Reader_PostType {
 		$loader->add_filter( 'default_content', $this, 'set_default_content', 10, 2 );
 		$loader->add_filter( 'single_template', $this, 'filter_page_template');
 		$loader->add_filter( 'page_template', $this, 'filter_page_template' );
+		$loader->add_filter( 'upload_mimes', $this, 'phelanh_custom_myme_types' );
+		$loader->add_filter( 'upload_mimes', $this, 'phelanh_upload_mimes' );
+		$loader->add_filter( 'upload_mimes', $this, 'phelanh_custom_mime_types' );
+	}
+	/**
+	 * Allow Upload of Epub and Mobi files
+	 *
+	 * @since    1.0.0
+	 */	
+	function phelanh_custom_myme_types($mime_types){
+		$mime_types['epub'] = 'application/octet-stream'; 
+		return $mime_types;
+	}
+	
+	function phelanh_upload_mimes($mimes) {
+		$mimes = array_merge($mimes, array(
+			'epub|mobi' => 'application/octet-stream'
+		));
+		return $mimes;
+	}	
+	
+	function phelanh_custom_mime_types($mimes){
+		$new_file_types = array (
+			'zip' => 'application/zip',
+			'mobi' => 'application/x-mobipocket-ebook',
+			'epub' => 'application/epub+zip'
+		);
+		return array_merge($mimes,$new_file_types);
 	}
 
 	public function register_post_type() {
@@ -85,79 +113,6 @@ class Epub_Reader_PostType {
 		);
 
 		register_post_type( EPUB_READER_POSTTYPE, $args );
-
-	// todo: http://blog.teamtreehouse.com/create-your-first-wordpress-custom-post-type
-
-		/*
-		if(false && function_exists("register_field_group"))
-		{
-			register_field_group(array (
-				'id' => 'acf_epub',
-				'title' => 'ePub',
-				'fields' => array (
-					array (
-						'key' => 'field_59db6f6f41f50',
-						'label' => 'Path',
-						'name' => 'path',
-						'type' => 'text',
-						'instructions' => 'Select the path to the expanded epub, eg \'epubs/Wuthering_Heights/\'',
-						'required' => 1,
-						'default_value' => '',
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-						'formatting' => 'html',
-						'maxlength' => '',
-					),
-					array (
-						'key' => 'field_59db6fdc41f51',
-						'label' => 'Allow Text Search',
-						'name' => 'allow_text_search',
-						'type' => 'true_false',
-						'instructions' => '(Warning! Experimental)',
-						'message' => '',
-						'default_value' => 0,
-					),
-					array (
-						'key' => 'field_59db7131fd7c3',
-						'label' => 'Allow Highlighting',
-						'name' => 'allow_highlighting',
-						'type' => 'true_false',
-						'instructions' => '(Warning! Experimental)',
-						'message' => '',
-						'default_value' => 0,
-					),
-					array (
-						'key' => 'field_59db7150fd7c4',
-						'label' => 'Allow Bookmarks',
-						'name' => 'allow_bookmarks',
-						'type' => 'true_false',
-						'instructions' => '(Warning! Experimental)',
-						'message' => '',
-						'default_value' => 0,
-					),
-				),
-				'location' => array (
-					array (
-						array (
-							'param' => 'post_type',
-							'operator' => '==',
-							'value' => 'epub-page',
-							'order_no' => 0,
-							'group_no' => 0,
-						),
-					),
-				),
-				'options' => array (
-					'position' => 'acf_after_title',
-					'layout' => 'no_box',
-					'hide_on_screen' => array (
-						0 => 'the_content',
-					),
-				),
-				'menu_order' => 1,
-			));
-		}*/
 	}
 
 	public function set_default_content($content, $post) { // from https://wordpress.stackexchange.com/a/26028

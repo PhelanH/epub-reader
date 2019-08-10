@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader
@@ -22,7 +22,7 @@
  * @since      0.9.0
  * @package    Epub_Reader
  * @subpackage Epub_Reader/includes
- * @author     cmroanirgo <cmroanirgo@users.noreply.github.com>
+ * @author     phelanh <phelanh@users.noreply.github.com>
  */
 class Epub_Reader_i18n {
 

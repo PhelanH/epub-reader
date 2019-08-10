@@ -10,7 +10,7 @@ define('EPUB_READER_POSTTYPE', 'epub-reader-page');
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://kodespace.com
+ * @link       https://github.com/PhelanH/epub-reader/
  * @since      0.9.0
  *
  * @package    Epub_Reader
@@ -29,7 +29,7 @@ define('EPUB_READER_POSTTYPE', 'epub-reader-page');
  * @since      0.9.0
  * @package    Epub_Reader
  * @subpackage Epub_Reader/includes
- * @author     cmroanirgo <cmroanirgo@users.noreply.github.com>
+ * @author     phelanh <phelanh@users.noreply.github.com>
  */
 class Epub_Reader {
 
