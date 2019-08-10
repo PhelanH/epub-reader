@@ -16,7 +16,7 @@
  * Plugin Name:       ePub Reader
  * Plugin URI:        https://github.com/PhelanH/epub-reader/
  * GitHub Plugin URI: PhelanH/epub-reader
- * Description:       An epub reader, mobile ready. Shortcode: [epub-reader src="/epubs/yourbook"].
+ * Description:       EPub Reader zum einbinden in Wordpress Seiten. Shortcode: [epub-reader src="/epubs/yourbook"].
  * Version:           1.0.0
  * Author:            PhelanH
  * Author URI:        https://github.com/PhelanH/epub-reader/
