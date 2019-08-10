@@ -1,5 +1,6 @@
 === ePub Reader ===
-Contributors: cmroanirgo
+Original Contributors: cmroanirgo
+Contributors: PhelanH
 Donate link: https://github.com/PhelanH/epub-reader/
 Tags: epub
 Requires WP: 3.0.1
