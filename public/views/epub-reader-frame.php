@@ -84,19 +84,15 @@ $cache_version = htmlspecialchars($_GET["cv"]);
            })
 
            $(function() { 
-           		if (self==top) {
-           			// redirect to domain if NOT in an iframe!!
-           			alert('Don\'t hotlink this book!')
-           			window.location.href = "<?php echo $root_url; ?>";
-           			return;
-           		}
+           		//if (self==top) {
+           		//	// redirect to domain if NOT in an iframe!!
+           		//	alert('Don\'t hotlink this book!')
+           		//	window.location.href = "<?php echo $root_url; ?>";
+           		//	return;
+           		//}
 
            		var isMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent));
            		var isAppleWebKit = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
-             	console.log("Using epub.js v" + EPUBJS.VERSION);
-                console.log("Base uri: <?php echo $epubjs_url; ?>");
-                console.log("isMobile: "+ isMobile+"       isAppleWebKit: " + isAppleWebKit);
-                console.log('has localStorage: ' + (!!localStorage));
                 EPUBJS.filePath = "<?php echo $epubjs_url; ?>js/libs/";
                 EPUBJS.cssPath = "<?php echo $epubjs_url; ?>css/";
                 EPUBJS.cacheVersion = "<?php echo $cache_version; ?>";
@@ -138,7 +134,7 @@ $cache_version = htmlspecialchars($_GET["cv"]);
             	var fnSaveSettings = function() {
             		if (saveTimeout>0)// cancel (& hence reset) any existing timeouts
             			clearTimeout(saveTimeout);
-            		saveTimeout = setTimeout(function() {
+						saveTimeout = setTimeout(function() {
             			//console.log('saving...')
             			saveTimeout = -1;
             			window.reader.saveSettings();
@@ -166,7 +162,12 @@ $cache_version = htmlspecialchars($_GET["cv"]);
 				$('#font-reset').on('click', function(e) { redraw(1); return fnNothing(e); }).on('mousedown', fnNothing);
 				//$('#highlight').on('click', function(e) { return fnNothing(e); }).on('mousedown', fnNothing);
 				$(document).on('touchmove', function(e) { e.preventDefault(); }); // fix iOS 10+ page scrolling
-
+				var iframe = document.getElementsByTagName('iframe');
+				
+				function WaitForIFrame() {
+					$('iframe').contents().find("head").append($("<style type='text/css'>  body{background-color:transparent!important;}  </style>"));
+				}
+			setTimeout(WaitForIFrame, 200);
 			})
         </script>
 
@@ -178,7 +179,6 @@ $cache_version = htmlspecialchars($_GET["cv"]);
 
         <!-- Touch -->
         <script type="text/javascript" src="<?php echo $epubjs_url; ?>js/libs/jquery.touchswipe.min.js?ver=<?php echo $cache_version; ?>"></script>
-
         <!-- Render -->
         <script type="text/javascript" src="<?php echo $epubjs_url; ?>js/epub.min.js?ver=<?php echo $cache_version; ?>"></script>
 
@@ -194,7 +194,7 @@ $cache_version = htmlspecialchars($_GET["cv"]);
 
         <!-- misc -->
         <script type="text/javascript" src="<?php echo $epubjs_url; ?>js/hooks/extensions/book_styles.js?ver=<?php echo $cache_version; ?>"></script>
-
+	
         <!-- Highlights -->
         <!--
         <script type="text/javascript" src="<?php echo $epubjs_url; ?>js/libs/jquery.highlight.js"></script>
@@ -217,7 +217,7 @@ $cache_version = htmlspecialchars($_GET["cv"]);
             <a id="font-up"   class="icon-font-up"       title="Increase Font">&nbsp;</a>
             <a id="font-down" class="icon-font-down"     title="Decrease Font">&nbsp;</a>
             <a id="bookmark" class="icon-bookmark-empty" title="Toggle Bookmark">&nbsp;</a>
-            <a id="fullscreen" class="icon-resize-full"  title="Toggle Fullscreen">&nbsp;</a>
+            <!--<a id="fullscreen" class="icon-resize-full"  title="Toggle Fullscreen">&nbsp;</a>-->
           </div>
         </div>
         <div id="_main" class="flex-grow">
